@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol,a,a:hover{
+            list-style-type: none;
+            text-decoration: none;
+        }
+        .left{
+            float: left;
+        }
+        .right{
+            float: right;
+        }
+        #nav{
+            width: 1500px;
+            height: 40px;
+            border: 1px solid black;
+            margin: auto;
+        }
+        #nav ul li{
+            float: left;
+            margin:0px 40px;
+        }
+        #nav ul li a{
+            font-size: 30px;
+            color: #555;
+            display: inline-block;
+            width: 220px;
+            text-align: center;
+        }
+        #nav ul li a:hover{
+            background-color: #888888;
+            color: white;
+        }
+
+        #nav>ul li ol{
+            margin-top: -2px;
+            position: absolute;
+        }
+        #nav>ul li ol li{
+            clear: both;
+            opacity: 0;
+            background-color: #888888;
+            position: relative;
+            transform: translateX(-40px);
+            z-index: -1;
+        }
+        #nav>ul li ol li a{
+            color: #333333;
+            font-size: 20px;
+            display: inline-block;
+            text-align: center;
+            transition: all .1s;
+            height: 40px;
+            line-height: 40px;
+        }
+        #nav>ul li:hover ol li{
+            opacity: 1;
+            z-index: 1;
+        }
+        #nav>ul li ol li:hover a{
+            background-color: #ccc;
+            color: black;
+            transition: all 0.1s;
+        }
+    </style>
+</head>
+<body>
+<div id="nav">
+    <ul class="left">
+        <li><a href="">轿车</a>
+            <ol >
+                <li><a href="">Polo</a></li>
+                <li><a href="">桑塔纳</a></li>
+                <li><a href="">宝来</a></li>
+                <li><a href="">朗逸</a></li>
+                <li><a href="">高尔夫</a></li>
+            </ol>
+        </li>
+        <li><a href="">SUV</a>
+            <ol>
+                <li><a href="">途铠</a></li>
+                <li><a href="">探影</a></li>
+                <li><a href="">途岳</a></li>
+                <li><a href="">途观</a></li>
+                <li><a href="">探岳</a></li>
+            </ol>
+        </li>
+        <li><a href="">MPV</a>
+            <ol>
+                <li><a href="">途安</a></li>
+                <li><a href="">夏朗</a></li>
+                <li><a href="">迈特威</a></li>
+                <li><a href="">凯路威</a></li>
+                <li><a href="">开迪</a></li>
+            </ol>
+        </li>
+        <li><a href="">跑车</a>
+            <ol>
+                <li><a href="">BlueSport</a></li>
+                <li><a href="">尚酷</a></li>
+                <li><a href="">Eos</a></li>
+                <li><a href="">Peak</a></li>
+                <li><a href="">XL</a></li>
+            </ol>
+        </li>
+        <li><a href="">皮卡</a>
+            <ol>
+                <li><a href="">Polo</a></li>
+                <li><a href="">桑塔纳</a></li>
+                <li><a href="">宝来</a></li>
+                <li><a href="">朗逸</a></li>
+                <li><a href="">高尔夫</a></li>
+            </ol>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
