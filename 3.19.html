@@ -1,0 +1,105 @@
+6p<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript实例</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 28px;
+            background-color: #444;
+        }
+        ol,ul{
+            list-style-type: none;
+        }
+        .left {
+            float: left;
+        }
+        #nav{
+            width: 350px;
+            height: 800px;
+            border-bottom: 1px solid black;
+            padding-top: 22px;
+            float: left;
+        }
+        #nav ul a{
+            text-decoration-line: none;
+            color: white;
+            display: inline-block;
+            transition: 0.2s  linear;
+        }
+        #nav a img{
+            width: 340px;
+        }
+        #nav ul a:hover{
+            color: #00ccff;
+            transform: translateX(20px);
+        }
+        #nav ul a:active{
+            text-decoration-line: underline;
+        }
+        #nav .nav_left li  {
+            float: left;
+            margin: 1px;
+        }
+        #photo{
+            width: 1290px;
+            margin-top: 10px;
+            margin-left: 30px;
+        }
+        p{
+            margin-left: 830px;
+            color: #66ccff;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <ul class="nav_left left"  id="imagegallery">
+            <li>
+                <a href="../4K/大乔-守护之力 王者荣耀4k游戏壁纸3840x2160_彼岸图网.jpg" title="大乔——守护之力">
+                    <img src="../4K/大乔-守护之力 王者荣耀4k游戏壁纸3840x2160_彼岸图网.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="../4K/晚萤 娜可露露 王者荣耀3440x1440壁纸_彼岸图网.jpg" title="娜可露露——晚莹"><img src="../4K/晚萤 娜可露露 王者荣耀3440x1440壁纸_彼岸图网.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="../4K/公孙离-无限星赏官 王者荣耀4k壁纸3840x2160_彼岸图网.jpg" title="公孙离——无限星赏官"><img src="../4K/公孙离-无限星赏官 王者荣耀4k壁纸3840x2160_彼岸图网.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="../4K/王昭君-偶像歌手 王者荣耀壁纸_彼岸图网.jpg" title="王昭君——偶像歌手"><img src="../4K/王昭君-偶像歌手 王者荣耀壁纸_彼岸图网.jpg" alt=""></a>
+            </li>
+        </ul>
+    </div>
+    <img id="photo" src="../4K/阿尔卑斯山夜晚星空风景4k壁纸3840x2160_彼岸图网.jpg" alt="">
+    <p id="description">Please choose an image.</p>
+</body>
+<script>
+    function prepareGallery() {
+        if(!document.getElementsByTagName || !document.getElementById || !document.getElementById("imagegallery"))
+            return false;
+        let gallery = document.getElementById("imagegallery");
+        var links = gallery.getElementsByTagName("a");
+        for (var i = 0;i < links.length;i++){
+            links[i].onclick = function () {
+                return showPic(this) ? false : true;
+            }
+        }
+    }
+    function showPic(whichpic) {
+        if (!document.getElementById("photo")) return false;
+        var a = whichpic.getAttribute("href");
+        var b = document.getElementById("photo");
+        b.setAttribute("src",a);
+        var text = whichpic.getAttribute("title")?whichpic.getAttribute("title"):"";
+        var c = document.getElementById("description");
+        if (description.firstChild.nodeType == 3){
+            description.firstChild.nodeValue = text;
+        }
+        return true;
+    }
+    window.onload = prepareGallery;
+</script>
+</html>
